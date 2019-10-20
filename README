@@ -1,0 +1,63 @@
+=============================================================================
+Nume: Damian Stefania-Dorina
+Grupa: 312CD
+=============================================================================
+
+
+TEMA 1 - TetriBit
+
+    L-am ajutat pe Gigel cu implementarea jocului Tetris, folosind
+operatii pe biti. Pentru realizarea acestui obiectiv am facut un program
+in care am  folosit functii pentru realizarea diferitelor cerinte si
+simplificarea codului astfel incat sa fie mai lizibil si mai usor de inteles.
+
+    Am considerat harta si piesele variabile de 64 de biti si am folosit
+piese auxiliare pentru a realiza coborarile si deplasarile fara a pierde
+forma pieselor initiale. Piesele sunt tratate ca harta: au 8 linii si 8
+coloane a caror indexare porneste de la 0, linia 0 fiind linia cea mai de
+jos, iar coloana 0 fiind cea mai din dreapta. De asemenea, am folosit o
+harta auxiliara care retine harta in momentul deplasarii piesei curente.
+
+    Functiile folosite si rolul acestora sunt urmatoarele:
+
+1. bitul_i:
+-determina daca bitul de pe pozitia i este 1 sau 0, considerand 0 ca fiind
+pozitia celui mai nesemnificativ bit
+
+2. afisare_harta:
+-afiseaza harta folosind # si . conform cerintei
+
+3. deplasare_stanga:
+-realizeaza deplasarea la standa a piesei pe o anumita distanta in
+cadrul liniei primite ca parametru
+-foloseste o piesa auxiliara tot de 64 de biti pentru a efectua
+transformarea in cadrul liniei date
+-pentru a nu pierde forma piesei, functia returneaza piesa initiala
+deplasata in cadrul liniei 0 (linia de jos)
+
+4. deplasare_dreapta:
+-realizeaza deplasarea la dreapta a piesei pe o anumita distanta in
+cadrul liniei primite ca parametru
+-foloseste o piesa auxiliara tot de 64 de biti pentru a efectua
+transformarea in cadrul liniei date
+-pentru a nu pierde forma piesei, functia returneaza piesa initiala
+deplasata in cadrul liniei 0 (linia de jos)
+
+5. coliziune:
+-verifica daca exista coliziune si piesa poate cobori pe linia data
+
+6. coborare:
+-realizeaza coborarea piesei pe linia primita ca parametru
+
+7. adaugare_linie1:
+-adauga o linie de 1 la forma binara a unei harti auxiliare
+-este folosita la eliminarea liniilor complete ale hartii
+
+8. linie1:
+-returneaza indicele primei linii complete din harta sau -1 in cazul
+in care aceasta nu exista
+
+9. eliminare_linie:
+-elimina linia completa primita ca parametru
+-foloseste doua masti care retin zonele hartii de deasupra si
+dedesubtul liniei complete
